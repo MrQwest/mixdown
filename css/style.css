@@ -156,11 +156,14 @@ footer {
   background-color: rgba(172, 65, 17, 0.8);
   padding: 2em 0;
   margin: 2em auto 0;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.4);
   font-size: 0.9em;
   text-align: center;
+  font-family: georgia;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out; }
   footer a {
-    color: white; }
+    color: rgba(255, 255, 255, 0.75); }
+    footer a:hover {
+      color: rgba(255, 255, 255, 0.9); }
