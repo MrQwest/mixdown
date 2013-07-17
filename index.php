@@ -26,9 +26,7 @@
 
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
 	<link href="webfonts/ss-standard.css" rel="stylesheet" /> <!-- <3 symbolset -->
-	<link rel="icon" 
-      type="image/png" 
-      href="favicon.png">
+	<link rel="icon" type="image/png" href="favicon.png" />
 
 </head>
 <body>
@@ -38,6 +36,7 @@
 	<form class="search" name="searchfield" id="searchform">
 		<label class="ss-icon">Search</label>
 		<input type="text" name="search" id="search" />
+		<img id="spinner" src="css/spinner.gif" alt="Loading&hellip;" title="Loading results&hellip;" />
 	</form>
 	
 	<div id="sc" class="sccontent">
@@ -59,5 +58,10 @@
 		ga('create', 'UA-1099002-21', 'mrqwest.co.uk');
 	 	ga('send', 'pageview');
 	</script>
+	<?php $url = substr(str_replace(array('labs/mixdown/', '%20'), array('', '+'), $_SERVER['REQUEST_URI']), 1); if($url != '') { $sq = str_replace('+', ' ', $url); ?><script> 
+		$('#search').val('<?= $sq ?>');
+		loadMusic('<?= $sq ?>');
+		history.replaceState('<?= $sq ?>', '"<?= $sq ?>" mixes ~ MixDown', '<?= $url ?>');	
+	</script><?php } ?> 
 </body>
 </html>
