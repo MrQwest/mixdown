@@ -51,26 +51,40 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 
 	// THIS IS THE OUTPUT, It takes the output var and stuffs it into #sc.
 	$('#sc').html(output);
-
-
+	
+	$('#spinner').hide();	
 })
 .fail(function() {
 	// This fail function fires if the .get encounters a problem - might be nice to put something on the page otherwise its just blank. Search 'indie' for an example
 	console.log("There was an error retriving the results");
 	// TODO: Remove the linebreaks and style text
 	$('#sc').html('<br /><br /><p>Oops, no one has added anything to Soundcloud that matches your search.</p>');
+	
+	$('#spinner').hide();	
+
 });
 }
 
 
-$('#searchform').submit(function() {
-	$("#search").keyup(function () {
-      var sq = $(this).val();
-      console.log(sq);
-      $('footer').css( "position", "relative" );
-      loadMusic(sq);
-    }).keyup();
-	return false;
+window.addEventListener('popstate', function(event) {
+	if(event.state != null) { $("#search").val(event.state); loadMusic(event.state); }
 });
 
+$('#searchform').submit(function(e) {	
+	e.preventDefault();
+	$('#spinner').show().css('display', 'block');
+	var sq = $("#search").val();
+	if(sq != '') {
+		console.log(sq);  
+				
+		var url = sq.replace(/\s/g, '\+');    
+		history.pushState(sq, '"' + sq + '" mixes ~ MixDown', url);
+		
+	    $('footer').css( "position", "relative" );
+	    loadMusic(sq);
+	}
+});
 
+$('#searchform .ss-icon').click(function(){
+	$('#searchform').submit();
+});
