@@ -41,16 +41,15 @@ table {
 /* SITE STYLES ================================= */
 html {
   background-color: #eb6f38;
-  background: -webkit-linear-gradient(90deg, #ff6c00 10%, #ffa300 90%);
-  background: -webkit-linear-gradient(90deg, #ff6c00 10%, #ffa300 90%);
+  background: -webkit-linear-gradient(0deg, #ff6c00 10%, #ffa300 90%);
   /* ChromE 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #ff6c00 10%, #ffa300 90%);
+  background: -moz-linear-gradient(0deg, #ff6c00 10%, #ffa300 90%);
   /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #ff6c00 10%, #ffa300 90%);
+  background: -ms-linear-gradient(0deg, #ff6c00 10%, #ffa300 90%);
   /* IE10 */
-  background: -o-linear-gradient(90deg, #ff6c00 10%, #ffa300 90%);
+  background: -o-linear-gradient(0deg, #ff6c00 10%, #ffa300 90%);
   /* Opera 11.10+ */
-  background: linear-gradient(90deg, #ff6c00 10%, #ffa300 90%);
+  background: linear-gradient(0deg, #ff6c00 10%, #ffa300 90%);
   /* W3C */
   height: 100%;
   background-repeat: no-repeat;

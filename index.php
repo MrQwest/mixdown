@@ -38,7 +38,9 @@
 		<input type="text" name="search" id="search" />
 		<img id="spinner" src="css/spinner.gif" alt="Loading&hellip;" title="Loading results&hellip;" />
 	</form>
-	
+	<div id="scui" class="scuibar">
+
+	</div>
 	<div id="sc" class="sccontent">
 
 	</div>

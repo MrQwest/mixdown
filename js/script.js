@@ -37,7 +37,7 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 	
 			// replace large with t200x200 in thumb and pop the new val in thumbs
 			var thumbs = thumb.replace('large', 't200x200');
-			output += '<div class=track data-plays='+tracks[i].playback_count+'data-length='+tracks[i].duration+'data-downloads='+tracks[i].download_count+'><a href='+tracks[i].permalink_url+' alt="Permalink to '+tracks[i].title+'"><img class=artwork src='+thumbs+' alt='+tracks[i].title+' /></a><div class="clearfix meta"><h1><a href='+tracks[i].permalink_url+' alt="Permalink to '+tracks[i].title+'">'+tracks[i].title+'</a></h1><p class="metadata"><span class="ss-icon">Time</span>' +convertFromMS(tracks[i].duration) + ' | <span class="ss-icon">play</span> '+tracks[i].playback_count+' | <span class="ss-icon">download</span> '+tracks[i].download_count+' | <span class="ss-icon">tag</span>'+tracks[i].genre+'</p><audio controls="controls" preload="none"><source src='+tracks[i].stream_url+'?client_id=91bd52531c9b150e11efac29abdb79eb type="audio/mpeg">Your browser does not support the audio element.</audio><!-- download button --><a href='+tracks[i].download_url+'?client_id=91bd52531c9b150e11efac29abdb79eb class="ss-icon btn">download</a></div></div>';
+			output += '<div class=track data-plays='+tracks[i].playback_count+' data-length='+tracks[i].duration+' data-downloads='+tracks[i].download_count+'><a href='+tracks[i].permalink_url+' alt="Permalink to '+tracks[i].title+'"><img class=artwork src='+thumbs+' alt='+tracks[i].title+' /></a><div class="clearfix meta"><h1><a href='+tracks[i].permalink_url+' alt="Permalink to '+tracks[i].title+'">'+tracks[i].title+'</a></h1><p class="metadata"><span class="ss-icon">Time</span>' +convertFromMS(tracks[i].duration) + ' | <span class="ss-icon">play</span> '+tracks[i].playback_count+' | <span class="ss-icon">download</span> '+tracks[i].download_count+' | <span class="ss-icon">tag</span>'+tracks[i].genre+'</p><audio controls="controls" preload="none"><source src='+tracks[i].stream_url+'?client_id=91bd52531c9b150e11efac29abdb79eb type="audio/mpeg">Your browser does not support the audio element.</audio><!-- download button --><a href='+tracks[i].download_url+'?client_id=91bd52531c9b150e11efac29abdb79eb class="ss-icon btn">download</a></div></div>';
 		}
 	}
 
@@ -53,7 +53,9 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 	});
 
 	// THIS IS THE OUTPUT, It takes the output var and stuffs it into #sc.
+	$('#scui').html("<ul class=ui><li><a class='btn ui sortbydownload' href=# id=sortByDownload>Sort by Download</a></li><li><a class='btn ui sortbyplays' href=# id=sortByPlays>Sort by Plays</a></li><li><a class='btn ui sortbylength' href=# id=sortByLength>Sort by Duration</a></li></ul>")
 	$('#sc').html(output);
+	sortByDownload();
 	
 	$('#spinner').hide();	
 })
@@ -91,3 +93,54 @@ $('#searchform').submit(function(e) {
 $('#searchform .ss-icon').click(function(){
 	$('#searchform').submit();
 });
+
+// Lets sort some stuff!
+$.fn.reverse = [].reverse;
+function sortByDownload() {
+	var $wrapper = $('.sccontent');
+	console.log($wrapper);
+	$wrapper.find('.track').sort(function (a, b) {
+    	var sortByDL = +a.dataset.downloads - +b.dataset.downloads;
+    	
+    	return sortByDL;
+	}).reverse()
+	.appendTo( $wrapper );
+	console.log("made it to the end of sortByDownload")
+}
+
+function sortByPlays() {
+	var $wrapper = $('.sccontent');
+	console.log($wrapper);
+	$wrapper.find('.track').sort(function (a, b) {
+    	var sortByPlayCount = +a.dataset.plays - +b.dataset.plays;
+    	
+    	return sortByPlayCount;
+	}).reverse()
+	.appendTo( $wrapper );
+	console.log("made it to the end of sortByPlays")
+}
+
+function sortByLength() {
+	var $wrapper = $('.sccontent');
+	console.log($wrapper);
+	$wrapper.find('.track').sort(function (a, b) {
+    	var sortByDuration = +a.dataset.length - +b.dataset.length;
+    	
+    	return sortByDuration;
+	}).reverse()
+	.appendTo( $wrapper );
+	console.log("made it to the end of sortByDuration")
+}
+
+$('#sortByDownload').on('click',function(e) {
+	e.preventDefault();
+	sortByDownload();	
+})
+$('#sortByPlays').on('click',function(e) {
+	e.preventDefault();
+	sortByPlays();	
+})
+$('#sortByLength').on('click',function(e) {
+	e.preventDefault();
+	sortByLength();	
+})

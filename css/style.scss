@@ -22,12 +22,12 @@ $scorange: #FF6C00;
 
 html {
 	background-color: $orange;
-	background: -webkit-linear-gradient(90deg, #FF6C00 10%, #FFA300 90%);
-    background: -webkit-linear-gradient(90deg, $scorange 10%, #FFA300 90%); /* ChromE 10+, Saf5.1+ */
-    background:    -moz-linear-gradient(90deg, $scorange 10%, #FFA300 90%); /* FF3.6+ */
-    background:     -ms-linear-gradient(90deg, $scorange 10%, #FFA300 90%); /* IE10 */
-    background:      -o-linear-gradient(90deg, $scorange 10%, #FFA300 90%); /* Opera 11.10+ */
-    background:         linear-gradient(90deg, $scorange 10%, #FFA300 90%); /* W3C */    
+	
+    background: -webkit-linear-gradient(0deg, $scorange 10%, #FFA300 90%); /* ChromE 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(0deg, $scorange 10%, #FFA300 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(0deg, $scorange 10%, #FFA300 90%); /* IE10 */
+    background:      -o-linear-gradient(0deg, $scorange 10%, #FFA300 90%); /* Opera 11.10+ */
+    background:         linear-gradient(0deg, $scorange 10%, #FFA300 90%); /* W3C */    
 	height: 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
