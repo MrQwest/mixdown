@@ -40,7 +40,21 @@ table {
 
 /* SITE STYLES ================================= */
 html {
-  background-color: #eb6f38; }
+  background-color: #eb6f38;
+  background: -webkit-linear-gradient(90deg, #ff6c00 10%, #ffa300 90%);
+  background: -webkit-linear-gradient(90deg, #ff6c00 10%, #ffa300 90%);
+  /* ChromE 10+, Saf5.1+ */
+  background: -moz-linear-gradient(90deg, #ff6c00 10%, #ffa300 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, #ff6c00 10%, #ffa300 90%);
+  /* IE10 */
+  background: -o-linear-gradient(90deg, #ff6c00 10%, #ffa300 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(90deg, #ff6c00 10%, #ffa300 90%);
+  /* W3C */
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
 
 .container {
   max-width: 40em;
@@ -82,14 +96,12 @@ h1 img {
       border-top-left-radius: 0.1em;
       border-top-right-radius: 0.1em; }
 
-#searchform .ss-icon:hover { 
-  cursor: pointer;
-}
+#searchform .ss-icon:hover {
+  cursor: pointer; }
 
 #spinner {
-  display:none; 
-  margin:10px auto 0 auto;
-}
+  display: none;
+  margin: 10px auto 0 auto; }
 
 .track {
   background-color: rgba(255, 255, 255, 0.7);
