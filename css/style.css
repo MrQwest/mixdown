@@ -190,3 +190,24 @@ footer {
 
 .scuibar {
   display: none; }
+
+.btn-ui {
+  text-decoration: none;
+  color: white;
+  background-color: #994100;
+  padding: 0.6rem 0.7rem 0.6rem;
+  display: inline-block;
+  border-radius: 0.2rem;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+  .btn-ui > span {
+    padding-right: 0.4rem;
+    font-size: 0.8rem; }
+  .btn-ui:hover {
+    background-color: #662b00; }
+
+.ui {
+  margin: 1rem 0 0 0; }
+  .ui li {
+    display: inline; }

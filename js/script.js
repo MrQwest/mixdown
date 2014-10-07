@@ -55,6 +55,7 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 	// THIS IS THE OUTPUT, It takes the output var and stuffs it into #sc.
 	$('#scui').show();
 	$('#sc').html(output);
+	$('footer').css({"position":"relative"});
 	sortByDownload();
 	
 	$('#spinner').hide();	

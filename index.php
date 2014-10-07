@@ -40,9 +40,9 @@
 	</form>
 	<div id="scui" class="scuibar">
 		<ul class="ui">
-			<li><a class='btn-ui sortbydownload' href="#" id="sortByDownload">Sort by Download</a></li>
-			<li><a class='btn-ui sortbyplays' href="#" id="sortByPlays">Sort by Plays</a></li>
-			<li><a class='btn-ui sortbylength' href="#" id="sortByLength">Sort by Duration</a></li>
+			<li><a class='btn-ui sortbydownload' href="#" id="sortByDownload"><span class="ss-icon">download</span>Sort by Downloads</a></li>
+			<li><a class='btn-ui sortbyplays' href="#" id="sortByPlays"><span class="ss-icon">play</span>Sort by Plays</a></li>
+			<li><a class='btn-ui sortbylength' href="#" id="sortByLength"><span class="ss-icon">time</span>Sort by Duration</a></li>
 		</ul>
 	</div>
 	<div id="sc" class="sccontent">
