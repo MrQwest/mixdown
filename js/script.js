@@ -53,7 +53,7 @@ $.get('https://api.soundcloud.com/tracks/?client_id=91bd52531c9b150e11efac29abdb
 	});
 
 	// THIS IS THE OUTPUT, It takes the output var and stuffs it into #sc.
-	$('#scui').html("<ul class=ui><li><a class='btn ui sortbydownload' href=# id=sortByDownload>Sort by Download</a></li><li><a class='btn ui sortbyplays' href=# id=sortByPlays>Sort by Plays</a></li><li><a class='btn ui sortbylength' href=# id=sortByLength>Sort by Duration</a></li></ul>")
+	$('#scui').show();
 	$('#sc').html(output);
 	sortByDownload();
 	
@@ -134,13 +134,16 @@ function sortByLength() {
 
 $('#sortByDownload').on('click',function(e) {
 	e.preventDefault();
+	console.log("clicked on downloads")
 	sortByDownload();	
 })
 $('#sortByPlays').on('click',function(e) {
 	e.preventDefault();
+	console.log("clicked on Plays")
 	sortByPlays();	
 })
 $('#sortByLength').on('click',function(e) {
 	e.preventDefault();
+	console.log("clicked on Length")
 	sortByLength();	
 })

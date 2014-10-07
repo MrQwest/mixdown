@@ -39,7 +39,11 @@
 		<img id="spinner" src="css/spinner.gif" alt="Loading&hellip;" title="Loading results&hellip;" />
 	</form>
 	<div id="scui" class="scuibar">
-
+		<ul class="ui">
+			<li><a class='btn-ui sortbydownload' href="#" id="sortByDownload">Sort by Download</a></li>
+			<li><a class='btn-ui sortbyplays' href="#" id="sortByPlays">Sort by Plays</a></li>
+			<li><a class='btn-ui sortbylength' href="#" id="sortByLength">Sort by Duration</a></li>
+		</ul>
 	</div>
 	<div id="sc" class="sccontent">
 
